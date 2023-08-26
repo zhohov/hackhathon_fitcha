@@ -20,13 +20,17 @@ class User(Base):
     email: Mapped[str] = mapped_column()
     hashed_password: Mapped[str] = mapped_column()
 
+    folders: Mapped[list['Folder']] = relationship()
+
 
 class Folder(Base):
     __tablename__ = 'folders'
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    name: Mapped[int] = mapped_column()
+    name: Mapped[str] = mapped_column()
     desc: Mapped[str] = mapped_column()
+
+    user: Mapped[int] = mapped_column(ForeignKey('users.id'))
 
     places: Mapped[list['Place']] = relationship(
         secondary=folder_place_association,
@@ -39,11 +43,14 @@ class Place(Base):
     __tablename__ = 'places'
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    name: Mapped[int] = mapped_column()
+    imgURL: Mapped[str] = mapped_column(nullable=True)
+    name: Mapped[str] = mapped_column()
     desc: Mapped[str] = mapped_column()
-    coord: Mapped[str] = mapped_column()
+    coord1: Mapped[str] = mapped_column()
+    coord2: Mapped[str] = mapped_column()
 
-    tag: Mapped[int] = mapped_column(ForeignKey('places.id'))
+    tag: Mapped[int] = mapped_column(ForeignKey('tags.id'))
+    city: Mapped[int] = mapped_column(ForeignKey('cities.id'))
 
     folders: Mapped[list['Folder']] = relationship(
         secondary=folder_place_association,
@@ -54,6 +61,15 @@ class Place(Base):
 
 class Tag(Base):
     __tablename__ = 'tags'
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column()
+
+    places: Mapped[list['Place']] = relationship()
+
+
+class City(Base):
+    __tablename__ = 'cities'
 
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column()

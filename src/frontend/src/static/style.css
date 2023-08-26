@@ -1,0 +1,107 @@
+.btn {
+    border-radius: 200em;
+}
+
+.btn-primary {
+    background-color: transparent!important;
+    border-color: white;
+}
+
+.card {
+    border-radius: 1.5em;
+    border: 0;
+}
+
+.img-fluid {
+    border-radius: 1em;
+}
+
+.card-title {
+    font-weight: normal;
+}
+
+mark {
+    color: white;
+    background: None;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.hidden {
+    display: none!important;
+}
+
+.visible {
+    display: inline-block;
+}
+
+.profile-toggler {
+    padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+    font-size: var(--bs-navbar-toggler-font-size);
+    line-height: 1;
+    color: var(--bs-navbar-color);
+    background-color: transparent;
+    border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
+    border-radius: 1em;
+    transition: var(--bs-navbar-toggler-transition);
+}
+
+.cards{
+    border-radius:  20px;
+    height: 120px;
+}
+
+.map-block{border-radius: 20px 20px 20px 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.cards-subtitle{
+    color:dimgrey;
+    font-size: 10px;
+}
+
+.head {
+    width: 100%;
+    height: 75vh;
+    border-radius: 1em;
+    background-color: #343a40;
+}
+
+.display-6 {
+    color: #adb5bd;
+}
+
+#logo {
+    font-weight: bold;
+}
+
+.form-control {
+    background-color: #343a40!important;
+    border-radius: 1em;;
+}
+
+body {
+    background-color: black!important;
+}
+
+.navbar {
+    background-color: black!important;
+}
+
+@media screen and (max-width: 767px) {
+    .position-card-relative {
+        position: relative!important;
+    }
+
+    .head {
+        width: 100%;
+        height: 60vh;
+        border-radius: 1em;
+        background-color: #FFAA47!important;
+    }
+}
+
+
